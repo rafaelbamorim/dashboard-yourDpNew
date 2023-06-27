@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Dashboard</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+
+	<!--ICONSCOUT-->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Painel</strong> de controle</a>
+
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Visão Geral</h1>
+					</header>
+
+
+
+					<hr class="major" />
+
+					<!-- Elements -->
+					<!-- <h2 id="elements">Exemplos</h2>
+					<div class="chart">
+						<div class="bar" style="height: 80%;"></div>
+					</div>
+
+					<img src="assets/img/image6-1.jpg" alt="image">
+					<img src="assets/img/20190109141117402195o (1).png" alt="image">
+
+					<div class="row gtr-200">
+						<div class="col-6 col-12-medium">
+							<div class="col-6 col-12-medium">
+							</div>
+						</div> -->
+
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">#</th>
+								<th scope="col">Nome</th>
+								<th scope="col">Email</th>
+								<th scope="col">Registro de ponto</th>
+							</tr>
+						</thead>
+						<tbody id="tableUser">
+
+
+						</tbody>
+					</table>
+
+				</section>
+
+
+				<div id="modalPoint" class="modalPoint">
+					<button id="closeModal" class="btnClose"><i class="uil uil-multiply"></i></button>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">Dia</th>
+								<th scope="col">Entrada</th>
+								<th scope="col">Intervalo</th>
+								<th scope="col">Volta</th>
+								<th scope="col">Saida</th>
+							</tr>
+						</thead>
+						<tbody id="tablePoint">
+							<tr>
+								<td>${item.name}</td>
+								<td>${item.email}</td>
+							
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Pesquisar" />
+					</form>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Dashboard</h2>
+					</header>
+					<ul>
+						<li><a href="./pages/cadUser/index.html">Cadastro</a></li>
+						<li><a href="generic.html">Financeiro</a></li>
+						<li><a href="elements.html">Relatórios</a></li>
+						<li><a href="elements.html">Férias</a></li>
+						<li><a href="../ausencia/index.html">Ausência</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/modalPoint.js"></script>
+	<script src="assets/js/getUser.js"></script>
+	
+</body>
+
+</html>

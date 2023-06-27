@@ -1,0 +1,44 @@
+/* Estilos para a bolinha de status */
+.status-ball {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  
+  /* Estilo para a bolinha de status "Pendente" */
+  .pendente {
+    background-color: yellow;
+  }
+  
+  /* Estilo para a bolinha de status "Aprovado" */
+  .aprovado {
+    background-color: green;
+  }
+  
+  /* Estilo para a bolinha de status "Rejeitado" */
+  .rejeitado {
+    background-color: red;
+  }
+  
+  /* Estilo para o texto do status */
+  .status-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* Estilos para os dados dentro do hide/show */
+  .details {
+    margin-top: 10px;
+  }
+  
+  .details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details li {
+    margin-bottom: 5px;
+  }
