@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="../../assets/css/main.css" />
   <link rel="stylesheet" href="./style.css">
+
+  <!--ICONSCOUT-->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 
 <body class="is-preload">
@@ -28,23 +31,50 @@
         <!-- Content -->
         <section>
           <header class="main">
-            <h1>Cadastro de usuario</h1>
+            <h1>Registro de Ausências</h1>
           </header>
 
           <hr class="major" />
 
-          <form id="formRegister">
-            <input id="name-signup" type="text" placeholder="Nome *"></input>
-            <input id="email-signup" type="text" placeholder="Email *"></input>
-            <input id="password-signup" type="password" placeholder="Senha *"></input>
-            <input id="confirm-password-signup" type="password" placeholder="Confirme a senha *"></input>
-            <button type="submit" id="create-acct-btn">Criar conta</button>
+          <table id="userTable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Verificar Ausências</th>
+              </tr>
+            </thead>
+            <tbody>
 
 
-          </form>
+            </tbody>
+          </table>
+
 
         </section>
 
+        <div id="modalAusencia" class="modalPoint">
+          <button id="closeModal" onclick="closeModal()" class="btnClose"><i class="uil uil-multiply"></i></button>
+          <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <p>Carregando...</p>
+          </div>
+          <table id="idTable" class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Dia</th>
+                <th scope="col">Motivo</th>
+                <th scope="col">Arquivo</th>
+                <th scope="col">Status</th>
+                <th scope="col">Atualizar</th>
+              </tr>
+            </thead>
+            <tbody id="tablePoint">
+              <!-- Linhas da tabela de ausência serão adicionadas aqui -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -65,10 +95,11 @@
             <h2>Dashboard</h2>
           </header>
           <ul>
-            <li><a class="active" href="../cadUser/index.html">Cadastro</a></li>
+            <li><a href="../cadUser/index.html">Cadastro</a></li>
             <li><a href="../cadContracheque/index.html">Financeiro</a></li>
+            
             <li><a href="./../cadFerias/index.html">Férias</a></li>
-            <li><a href="./../Ausencias/index.html">Ausência</a></li>
+            <li ><a class="active" href="elements.html">Ausência</a></li>
           </ul>
         </nav>
 
@@ -84,6 +115,7 @@
   <script src="../../assets/js/util.js"></script>
   <script src="../../assets/js/main.js"></script>
   <script src="./mongodb.js"></script>
+  <script src="./index.js"></script>
 
 </body>
 

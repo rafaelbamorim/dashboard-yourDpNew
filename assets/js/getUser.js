@@ -1,73 +1,85 @@
 
-var table = document.getElementById("tableUser")
+// Função para abrir o modal e exibir o ID do usuário
+function openModal(pontos) {
+  const modal = document.getElementById("modalPoint");
+ 
+  const tableBody = document.querySelector("#idTable tbody");
+  tableBody.innerHTML = "";
 
+  pontos.forEach(ponto => {
+    const row = document.createElement("tr");
 
+    const dia = document.createElement("td");
+    dia.textContent = ponto.data;
+    row.appendChild(dia);
 
-function handleShowTable(data, item) {
-  return `
-  
-    <tr>
-		  <th scope="row">${data.indexOf(item) + 1}</th>
-				<td>${item.name}</td>
-				<td>${item.email}</td>
-				<td>
-          <button type="button"  onclick="showModal(${JSON.stringify(item.ponto)})"><i class="uil uil-plus icon"></i></button>
-        </td>
-		</tr>
-  `
-}
+    const pontoEntrada = document.createElement("td");
+    pontoEntrada.textContent = ponto.entrada;
+    row.appendChild(pontoEntrada);
 
-var modalPoint = document.getElementById("modalPoint");
+    const pontoIntervalo = document.createElement("td");
+    pontoIntervalo.textContent = ponto.intervalo === null ? "Sem valor" : ponto.intervalo;
+    row.appendChild(pontoIntervalo);
 
-var closeModal = document.getElementById('closeModal');
+    const pontoVolta = document.createElement("td");
+    pontoVolta.textContent = ponto.volta === null ? "Sem valor" : ponto.volta;
+    row.appendChild(pontoVolta);
 
-closeModal.addEventListener('click', () => {
-  var modalPoint = document.getElementById("modalPoint");
-  modalPoint.classList.remove("active")
-})
+    const pontoSaida = document.createElement("td");
+    pontoSaida.textContent = ponto.saida;
+    row.appendChild(pontoSaida);
 
-function showModal(data){
-  modalPoint.classList.add("active")
-
-  console.log(data)
-  let tablePoint = document.getElementById("tablePoint")
-
-  data.map((item) => {
-    tablePoint.innerHTML += `
-    
-    <tr>
-      <td>${item.data}</td>
-      <td>${item.entrada}</td>
-      <td>${item.intervalo !== null ? item.intervalo : 'valor vazio'}</td>
-      <td>${item.volta !== null ? item.intervalo : 'valor vazio'}</td>
-      <td>${item.saida}</td>
-    </tr>
-    
-    `
+    tableBody.appendChild(row);
   })
 
+  
+  modal.style.display = "block";
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
-
-
-
-
-try {
-  fetch("http://localhost:3000/users")
-    .then((response) => response.json())
-    .then((data) => {
-      data.map((user) => {
-        table.innerHTML += handleShowTable(data, user)
-
-       
-       
-      })
-
-     
-
-    })
-
-} catch (err) {
-  console.log(err);
-  alert("Não foi possivel achar os usuaios")
+// Função para fechar o modal
+function closeModal() {
+  const modal = document.getElementById("modalPoint");
+  modal.style.display = "none";
 }
+
+// Função para buscar e exibir os usuários na tabela
+async function fetchUsers() {
+  const response = await fetch('https://api-yourdp.onrender.com/users');
+  const users = await response.json();
+
+  const tableBody = document.querySelector("#userTable tbody");
+  tableBody.innerHTML = "";
+
+  users.forEach(user => {
+    const row = document.createElement("tr");
+
+    const idCell = document.createElement("td");
+    idCell.textContent = users.indexOf(user) + 1;
+    row.appendChild(idCell);
+
+    const nameCell = document.createElement("td");
+    nameCell.textContent = user.name;
+    row.appendChild(nameCell);
+
+    const emailCell = document.createElement("td");
+    emailCell.textContent = user.email;
+    row.appendChild(emailCell);
+
+    const actionsCell = document.createElement("td");
+    const button = document.createElement("button");
+    button.textContent = "Mostrar";
+    button.addEventListener("click", () => openModal(user.ponto));
+    actionsCell.appendChild(button);
+
+    row.appendChild(actionsCell);
+    tableBody.appendChild(row);
+  });
+}
+
+// Chamar a função fetchUsers para buscar e exibir os usuários na tabela
+fetchUsers();
+

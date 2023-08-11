@@ -255,13 +255,13 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #f56a6a;
+  color: #2125ff;
   text-decoration: none;
 }
 
 a:hover {
-  border-bottom-color: #f56a6a;
-  color: #f56a6a !important;
+  border-bottom-color: #2125ff;
+  color: #2125ff !important;
 }
 
 a:hover strong {
@@ -1894,7 +1894,7 @@ header p {
 }
 
 header.major> :last-child {
-  border-bottom: solid 3px #f56a6a;
+  border-bottom: solid 3px #2125ff;
   display: inline-block;
   margin: 0 0 2em 0;
   padding: 0 0.75em 0.5em 0;
@@ -1960,8 +1960,8 @@ input[type="search"]:focus,
 input[type="url"]:focus,
 select:focus,
 textarea:focus {
-  border-color: #f56a6a;
-  box-shadow: 0 0 0 1px #f56a6a;
+  border-color: #2125ff;
+  box-shadow: 0 0 0 1px #2125ff;
 }
 
 select {
@@ -2069,8 +2069,8 @@ input[type="radio"]:checked+label:before {
 
 input[type="checkbox"]:focus+label:before,
 input[type="radio"]:focus+label:before {
-  border-color: #f56a6a;
-  box-shadow: 0 0 0 1px #f56a6a;
+  border-color: #2125ff;
+  box-shadow: 0 0 0 1px #2125ff;
 }
 
 input[type="checkbox"]+label:before {
@@ -2402,7 +2402,7 @@ ul.contact li:before {
 }
 
 ul.contact li:before {
-  color: #f56a6a;
+  color: #2125ff;
   display: inline-block;
   font-size: 1.5em;
   height: 1.125em;
@@ -2460,7 +2460,7 @@ ul.pagination li>.page {
 }
 
 ul.pagination li>.page.active {
-  background-color: #f56a6a;
+  background-color: #2125ff;
   color: #ffffff !important;
 }
 
@@ -2574,8 +2574,8 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #f56a6a;
-  color: #f56a6a !important;
+  box-shadow: inset 0 0 0 2px #2125ff;
+  color: #2125ff !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
@@ -2646,7 +2646,7 @@ input[type="reset"].primary,
 input[type="button"].primary,
 button.primary,
 .button.primary {
-  background-color: #f56a6a;
+  background-color: #2125ff;
   box-shadow: none;
   color: #ffffff !important;
 }
@@ -2763,7 +2763,7 @@ button:disabled,
 }
 
 .features article .icon:before {
-  color: #f56a6a;
+  color: #2125ff;
   font-size: 2.75rem;
   position: relative;
   top: 0.05em;
@@ -3394,7 +3394,7 @@ button:disabled,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  border-bottom: solid 5px #2125ff;
   padding: 6em 0 1em 0;
   position: relative;
 }
@@ -3580,7 +3580,7 @@ button:disabled,
 
 #menu ul a:hover,
 #menu ul span:hover {
-  color: #f56a6a;
+  color: #2125ff;
 }
 
 #menu ul a.opener,
@@ -3622,7 +3622,7 @@ button:disabled,
 
 #menu ul a.opener:hover:before,
 #menu ul span.opener:hover:before {
-  color: #f56a6a;
+  color: #2125ff;
 }
 
 #menu ul a.opener.active+ul,
@@ -3677,22 +3677,24 @@ img{
 }
 
 .modalPoint{
+  display:none;
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 2rem;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 
-  margin-left: 50rem !important;
+  /* margin-left: 50rem !important; */
+  width: 35rem;
   transition: 0.5s all ease-in-out;
   overflow-y: scroll;
 }
 
-.active{
+/* .active{
   margin-left: 0 !important;
-}
+} */
 
 
 .btnClose{
@@ -3704,4 +3706,8 @@ img{
 
 .modalPoint table{
   margin-top: 2rem;
+}
+
+.active{
+  color:#2125ff !important; 
 }

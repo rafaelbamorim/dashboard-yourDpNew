@@ -1,0 +1,76 @@
+/* Definindo a largura da janela modal */
+#modalAusencia {
+    width: 45%; /* Defina a largura desejada */
+    max-height: 40vh; /* Defina a altura máxima em unidades de viewport height */
+    overflow-y: auto; /* Adicione uma barra de rolagem vertical se necessário */
+
+  }
+  
+  /* Ajustando o tamanho das colunas da tabela */
+  #idTable td {
+    padding: 8px; /* Ajuste o preenchimento conforme necessário */
+  }
+  
+  #idTable td:nth-child(1) {
+    width: 20%; /* Largura da coluna "Dia" */
+  }
+  
+  #idTable td:nth-child(2) {
+    width: 15%; /* Largura da coluna "Motivo" */
+  }
+  
+  #idTable td:nth-child(3) {
+    width: 25%; /* Largura da coluna "Link de Download" */
+  }
+  
+  #idTable td:nth-child(4) {
+    width: 25%; /* Largura da coluna "Status" */
+  }
+  
+  #idTable td:nth-child(5) {
+    width: 10%; /* Largura da coluna "Alterar Status" */
+  }
+
+
+  /* Estilos para o sinal de loading */
+.loading-indicator {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: gray;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Adicione isso ao seu arquivo CSS */
+.status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .approved {
+    background-color: green;
+  }
+  
+  .rejected {
+    background-color: red;
+  }

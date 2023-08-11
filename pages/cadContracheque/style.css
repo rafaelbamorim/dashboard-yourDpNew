@@ -1,0 +1,23 @@
+.formImage{
+  width: 500px;
+  height: 200px;
+  border: 4px dashed #fff !important;
+}
+
+.formImage p{
+  text-align: center;
+  line-height: 170px;
+  color: #ffffff;
+  font-family: Arial;
+}
+
+.formImage input{
+  position: absolute !important;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none !important;
+  opacity: 0;
+}
+
